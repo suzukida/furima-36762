@@ -6,7 +6,7 @@
 | ------------------ | ------------- | ------------------------------ |
 | name               | string        | null: false                    |  名前
 | email              | string        | null: false                    |   アドレス
-| password           | integer       | null: false                    |  パスワード
+| encrypted_password | integer       | null: false                    |  パスワード
 | first_name         | string        | null: false                    |  苗字（全角）
 | first_kana         | string        | null: false                    |  フリガナ（苗字）
 | last_name          | string        | null: false                    |  名前（全角）
