@@ -15,7 +15,7 @@
 
 
 - has_many :items
-- has_many :buy_item
+- has_many :buy_items
 
 ## items テーブル　（商品　詳細）
 
@@ -59,7 +59,7 @@
 | city               | string        | null: false                    |  市町
 | city_address       | string        | null: false                    |  番地
 | building_name      | string        |                                |  建物名（任意）
-| phone_number       | integer       | null: false                    |  電話番号
+| phone_number       | string        | null: false                    |  電話番号
 
 
 - belongs_to :buy_item
