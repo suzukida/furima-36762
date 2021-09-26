@@ -5,7 +5,7 @@
 | Column             | Type          | Options                        |
 | ------------------ | ------------- | ------------------------------ |
 | name               | string        | null: false                    |  名前
-| email              | string        | unique: true                   |  アドレス
+| email              | string        | unique: true  null: false      |  アドレス
 | encrypted_password | string        | null: false                    |  パスワード
 | first_name         | string        | null: false                    |  苗字（全角）
 | first_kana         | string        | null: false                    |  フリガナ（苗字）
@@ -27,7 +27,7 @@
 | condition_id       | integer       | null: false                    |  商品状態
 | shipping_fee_id    | integer       | null: false                    |  配送料
 | send_area_id       | integer       | null: false                    |  発送元の地域(プルダウン　都道府県)
-| delivery_days_id   | integer       | null: false                    |  発送までの日数
+| delivery_day_id    | integer       | null: false                    |  発送までの日数
 | item_price         | integer       | null: false                    |  価格
 | user               | references    | null: false, foreign_key: true |
 
@@ -46,10 +46,10 @@
 
 - belongs_to :user
 - belongs_to :item
-- has_one :send
+- has_one :delivery
 
 
-## sends テーブル （配送先）
+## deliveries テーブル （配送先）
 
 
 | Column             | Type          | Options                        |
@@ -60,6 +60,7 @@
 | city_address       | string        | null: false                    |  番地
 | building_name      | string        |                                |  建物名（任意）
 | phone_number       | string        | null: false                    |  電話番号
+| buy_item           | references    | null: false, foreign_key: true |  buy_itemテーブルの情報
 
 
 - belongs_to :buy_item
