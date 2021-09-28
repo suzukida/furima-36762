@@ -1,14 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
   before do
     @user = FactoryBot.build(:user)
   end
 
   describe 'ユーザー新規登録' do
     it 'nicknameとemail、passwordとpassword_confirmationが存在すれば登録できる' do
-
     end
     it 'nameが空では登録できない' do
       @user.name = ''
@@ -44,31 +42,30 @@ RSpec.describe User, type: :model do
       @user.valid?
       expect(@user.errors.full_messages).to include("Password can't be blank")
     end
-    it "last_nameがない場合は登録できない" do
+    it 'last_nameがない場合は登録できない' do
       @user.last_name = ''
       @user.valid?
       expect(@user.errors.full_messages).to include("Last name can't be blank")
     end
-    it "first_nameがない場合は登録できない" do
+    it 'first_nameがない場合は登録できない' do
       @user.first_name = ''
       @user.valid?
       expect(@user.errors.full_messages).to include("First name can't be blank")
     end
-    it "last_kanaがない場合は登録できない" do
+    it 'last_kanaがない場合は登録できない' do
       @user.last_kana = ''
       @user.valid?
       expect(@user.errors.full_messages).to include("Last kana can't be blank")
     end
-    it "first_kanaがない場合は登録できない" do
+    it 'first_kanaがない場合は登録できない' do
       @user.first_kana = ''
       @user.valid?
       expect(@user.errors.full_messages).to include("First kana can't be blank")
     end
-    it "birthdayがない場合は登録できない" do
+    it 'birthdayがない場合は登録できない' do
       @user.birthday = ''
       @user.valid?
       expect(@user.errors.full_messages).to include("Birthday can't be blank")
     end
-
   end
 end
