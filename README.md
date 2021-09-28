@@ -7,10 +7,10 @@
 | name               | string        | null: false                    |  名前
 | email              | string        | unique: true  null: false      |  アドレス
 | encrypted_password | string        | null: false                    |  パスワード
-| first_name         | string        | null: false                    |  苗字（全角）
-| first_kana         | string        | null: false                    |  フリガナ（苗字）
-| last_name          | string        | null: false                    |  名前（全角）
-| last_kana          | string        | null: false                    |  フリガナ（名前）
+| last_name          | string        | null: false                    |  苗字（全角）
+| last_kana          | string        | null: false                    |  フリガナ（苗字）
+| first_name         | string        | null: false                    |  名前（全角）
+| first_kana         | string        | null: false                    |  フリガナ（名前）
 | birthday           | date          | null: false                    |  生年月日
 
 
