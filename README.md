@@ -21,13 +21,13 @@
 
 | Column             | Type          | Options                        |
 | ------------------ | ------------- | ------------------------------ |
-| item_name          | string        | null: false                    |
+| item_name          | string        | null: false                    |  商品名
 | explanation        | text          | null: false                    |  商品説明
 | category_id        | integer       | null: false                    |  カテゴリー
 | condition_id       | integer       | null: false                    |  商品状態
-| shipping_fee_id    | integer       | null: false                    |  配送料
-| send_area_id       | integer       | null: false                    |  発送元の地域(プルダウン　都道府県)
-| delivery_day_id    | integer       | null: false                    |  発送までの日数
+| shipping_id        | integer       | null: false                    |  配送料
+| prefecture_id      | integer       | null: false                    |  発送元の地域(プルダウン　都道府県)
+| delivery_id        | integer       | null: false                    |  発送までの日数
 | item_price         | integer       | null: false                    |  価格
 | user               | references    | null: false, foreign_key: true |
 
