@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
+  before_action :set_item, only: [:edit, :update, :show, :destroy]
   before_action :contributor_confirmation, only: [:edit, :update]
-  before_action :set_item, only: [:edit, :update, :show,]
+  
 
   def index
     @item = Item.includes(:user)
@@ -34,12 +35,20 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    if current_user.id == @item.user_id
+       @item.destroy
+       redirect_to root_path
+    else
+      render :show
+    end
+  end
+
   private
   def item_params
     params.require(:item).permit(:image,:item_name, :explanation, :category_id, :condition_id,:shipping_id,:prefecture_id,:delivery_id,:item_price).merge(user_id: current_user.id)
   end
     def contributor_confirmation
-      @item =Item.find(params[:id])
       redirect_to root_path unless @item.user == current_user
     end
     def set_item
