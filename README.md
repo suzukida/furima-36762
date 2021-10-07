@@ -46,10 +46,10 @@
 
 - belongs_to :user
 - belongs_to :item
-- has_one :delivery
+- has_one :address
 
 
-## deliveries テーブル （配送先）
+## addresses テーブル （配送先）
 
 
 | Column             | Type          | Options                        |
