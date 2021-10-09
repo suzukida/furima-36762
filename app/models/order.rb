@@ -5,7 +5,7 @@ class Order
   with_options  presence: true do
   validates :city
   validates :city_address
-  validates :phone_number, format: { with: /\d{10,11}/}, length: {maximum: 11}
+  validates :phone_number, format: { with: /\d{10,11}/}
   validates :post_code, format: { with:/\A\d{3}[-]\d{4}\z/ }
   validates :prefecture_id, numericality: { other_than: 0 , message: "を選択してください"}
   validates :user_id
