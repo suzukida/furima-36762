@@ -46,16 +46,16 @@
 
 - belongs_to :user
 - belongs_to :item
-- has_one :delivery
+- has_one :address
 
 
-## deliveries テーブル （配送先）
+## addresses テーブル （配送先）
 
 
 | Column             | Type          | Options                        |
 | ------------------ | ------------- | ------------------------------ |
 | post_code          | string        | null: false                    |  郵便番号
-| send_area_id       | integer       | null: false                    |  都道府県（プルダウン）
+| prefecture_id      | integer       | null: false                    |  都道府県（プルダウン）
 | city               | string        | null: false                    |  市町
 | city_address       | string        | null: false                    |  番地
 | building_name      | string        |                                |  建物名（任意）
