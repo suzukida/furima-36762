@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :set_order,only: [:index, :create]
   before_action :authenticate_user!,only: [:index, :create]
-  before_action :set_order,[:index, :create]
 
   def index  
     @order = Order.new
@@ -20,6 +20,7 @@ class OrdersController < ApplicationController
    end
   end
 
+  private
   def set_order
     @item = Item.find(params[:item_id])
   end
